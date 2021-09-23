@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Margarita Puzanova](https://up.htmlacademy.ru/javascript/24/user/1712049).
-* Наставник: `Неизвестно`.
+* Наставник: [Ксения Гарпушкина](https://up.htmlacademy.ru/javascript/24/user/1883933).
 
 ---
 
