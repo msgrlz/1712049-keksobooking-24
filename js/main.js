@@ -6,6 +6,8 @@ function randomInteger(min, max) {
   return Math.floor(rand);
 }
 
+randomInteger(1,3);
+
 // Источник: https://learn.javascript.ru/task/random-int-min-max
 
 
@@ -14,5 +16,7 @@ function randomInteger(min, max) {
 function random(min, max) {
   return min + Math.random() * (max - min);
 }
+
+random(1,4);
 
 // Источник:https://learn.javascript.ru/number
