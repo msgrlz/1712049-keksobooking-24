@@ -6,13 +6,9 @@ function getRandomInteger(min, max) {
   if (min >= max) {
     return null;
   }
-  if (min < 0) {
+  if (min < 0 || max < 0) {
     return null;
   }
-  if (max < 0) {
-    return null;
-  }
-
   const randomInteger = min + Math.random() * (max + 1 - min);
   return Math.floor(randomInteger);
 }
