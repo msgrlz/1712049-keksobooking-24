@@ -87,40 +87,65 @@ const PHOTOS = [
 ];
 
 const TITLES = [
-  'string 1',
-  'string 2',
+  'Отель "Rio Panoramic"',
+  'Гранд Отель "Жемчужина"',
   'Отель "Дельта Невы"',
-  'string 4',
-  'string 5',
-  'string 6',
-  'string 7',
-  'string 8',
-  'string 9',
-  'string 10',
+  'Mozart Hotel',
+  'Pinewood Hotel Rome',
+  'Pod Times Square',
+  'Scandic Oslo City',
+  'Strawberry Duck Moscow',
+  'Хостел Круассан',
+  'Дизайн-отель Чайковский',
 ];
 
-let titleIndex = getRandomInteger(0, TITLES.length - 1);
+const DESCRIPTION = [
+  'Стандартный двухместный номер с 1 кроватью или 2 отдельными кроватями',
+  'Капсула с кроватью размера «queen-size» в общем номере для мужчин и женщин',
+  'Двухместный номер эконом-класса с 1 кроватью и небольшим окном',
+  'Бюджетный двухместный номер с 1 кроватью',
+  'Номер-студио Делюкс',
+  'Small Room Shared Bathroom',
+  'Апартаменты-студия с видом на море',
+  'Клубный полулюкс «Элеганс» с гидромассажной ванной на открытом воздухе',
+  'Люкс с 1 спальней - Вид на улицу',
+  'Классический двухместный или одноместный номер',
+];
 
-let latValue = getRandomFloat(35.65000, 35.70000, 5);
-let lngValue = getRandomFloat(139.70000, 139.80000, 5);
+const MIN_PRICE = 10000;
+const MAX_PRICE = 50000;
 
-let featuresLength = getRandomInteger(0, FEATURES.length);
+const MIN_ROOMS = 1;
+const MAX_ROOMS = 5;
+
+const MIN_GUESTS = 1;
+const MAX_GUESTS = 5;
 
 function createNewAds(avatarID) {
+  const titleIndex = getRandomInteger(0, TITLES.length - 1);
+
+  const latValue = getRandomFloat(35.65000, 35.70000, 5);
+  const lngValue = getRandomFloat(139.70000, 139.80000, 5);
+
+  const featuresLength = getRandomInteger(0, FEATURES.length);
+  const descriptionIndex = getRandomInteger(0, DESCRIPTION.length - 1);
+
+  const photosLength = getRandomInteger(0, PHOTOS.length);
   return {
     author: { avatar: AVATARS[avatarID] },
 
     offer: {
       title: TITLES[titleIndex],
       address: `${latValue.toString()}, ${lngValue.toString()}`,
-      price: getRandomInteger(10000, 50000),
+      price: getRandomInteger(MIN_PRICE, MAX_PRICE),
       type: TYPES[getRandomInteger(0, TYPES.length - 1)],
-      rooms: getRandomInteger(1, 5),
-      guests: getRandomInteger(1, 5),
+      rooms: getRandomInteger(MIN_ROOMS, MAX_ROOMS),
+      guests: getRandomInteger(MIN_GUESTS, MAX_GUESTS),
       checkin: CHECKINS[getRandomInteger(0, CHECKINS.length - 1)],
       checkout: CHECKOUTS[getRandomInteger(0, CHECKOUTS.length - 1)],
       features: FEATURES.slice(0, featuresLength),
-      description: 'Стандартный двухместный номер с 1 кроватью или 2 отдельными кроватями',
+      description: DESCRIPTION[descriptionIndex],
+      photos: PHOTOS.slice(0, photosLength),
     },
 
     location: {
@@ -130,29 +155,13 @@ function createNewAds(avatarID) {
   };
 }
 
-let adsArray = [];
+const adsArray = [];
 
 for (let i = 0; i < 10; i++) {
-  titleIndex = getRandomInteger(0, TITLES.length - 1);
-
-  latValue = getRandomFloat(35.65000, 35.70000, 5);
-  lngValue = getRandomFloat(139.70000, 139.80000, 5);
-
-  featuresLength = getRandomInteger(0, FEATURES.length);
   const element = createNewAds(i);
   adsArray[i] = element;
 }
 
-console.log(adsArray);
-
-
-function generateObject(avatarID) {
-  const randomPhotoIndex = getRandomInteger(0, PHOTOS.length);
-  const location = newLocation();
-  return {
-    author: newAuthor(avatarID),
-    offer: newOffer(location),
-    photos: PHOTOS[randomPhotoIndex],
-    location: location,
-  };
-}
+let featuresLengthExample = getRandomInteger(0, FEATURES.length);
+console.log(featuresLengthExample);
+console.log(FEATURES.slice(0, featuresLength));
