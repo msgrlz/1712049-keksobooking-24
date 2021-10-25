@@ -161,7 +161,3 @@ for (let i = 0; i < 10; i++) {
   const element = createNewAds(i);
   adsArray[i] = element;
 }
-
-let featuresLengthExample = getRandomInteger(0, FEATURES.length);
-console.log(featuresLengthExample);
-console.log(FEATURES.slice(0, featuresLength));
