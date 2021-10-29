@@ -1,7 +1,7 @@
 import { AVATARS, TYPES, CHECKINS, CHECKOUTS, FEATURES, PHOTOS, TITLES, DESCRIPTION } from '.data.js';
 import { MIN_PRICE, MAX_PRICE, MIN_ROOMS, MAX_ROOMS, MIN_GUESTS, MAX_GUESTS } from '.data.js';
 
-import {getRandomInteger, getRandomFloat} from '.utils.js';
+import {getRandomInteger, getRandomFloat} from '.utilities.js';
 
 const createNewAd = (avatarID) => {
   const titleIndex = getRandomInteger(0, TITLES.length - 1);

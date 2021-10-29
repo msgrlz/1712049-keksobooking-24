@@ -1,6 +1,6 @@
 
 import '.data.js';
-import '.utils.js';
+import '.utilities.js';
 import { createNewAd } from '.create-ads';
 
 const adsArray = [];
