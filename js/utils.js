@@ -9,7 +9,6 @@ const getRandomInteger = (min, max) => {
   return Math.floor(randomInteger);
 };
 
-getRandomInteger(1, 3);
 
 const getRandomFloat = (min, max, decimal) => {
   if (min < 0 || max < 0) {
@@ -22,7 +21,5 @@ const getRandomFloat = (min, max, decimal) => {
   const fixedRandomFloat = Number(randomFloat.toFixed(decimal));
   return fixedRandomFloat;
 };
-
-getRandomFloat(1, 4, 2);
 
 export {getRandomInteger, getRandomFloat};

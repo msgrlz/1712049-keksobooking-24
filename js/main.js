@@ -1,10 +1,10 @@
 import '.data.js';
-import '.util.js';
-import {createNewAds} from '.create-element';
+import '.utils.js';
+import { createNewAd } from '.create-ads';
 
 const adsArray = [];
 
 for (let i = 0; i < 10; i++) {
-const element = createNewAds(i);
-adsArray[i] = element;
+  const element = createNewAd(i);
+  adsArray[i] = element;
 }

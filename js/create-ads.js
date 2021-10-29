@@ -1,9 +1,9 @@
 import { AVATARS, TYPES, CHECKINS, CHECKOUTS, FEATURES, PHOTOS, TITLES, DESCRIPTION } from '.data.js';
 import { MIN_PRICE, MAX_PRICE, MIN_ROOMS, MAX_ROOMS, MIN_GUESTS, MAX_GUESTS } from '.data.js';
 
-import {getRandomInteger, getRandomFloat} from '.util.js';
+import {getRandomInteger, getRandomFloat} from '.utils.js';
 
-const createNewAds = (avatarID) => {
+const createNewAd = (avatarID) => {
   const titleIndex = getRandomInteger(0, TITLES.length - 1);
 
   const latValue = getRandomFloat(35.65000, 35.70000, 5);
@@ -37,4 +37,4 @@ const createNewAds = (avatarID) => {
   };
 };
 
-export {createNewAds};
+export {createNewAd};
